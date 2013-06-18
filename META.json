@@ -54,5 +54,19 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/lestrrat/p5-HTML-HeadParser-Liberal/issues"
+      },
+      "homepage" : "https://github.com/lestrrat/p5-HTML-HeadParser-Liberal",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/lestrrat/p5-HTML-HeadParser-Liberal.git",
+         "web" : "https://github.com/lestrrat/p5-HTML-HeadParser-Liberal"
+      }
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "Daisuke Maki <lestrrat+github@gmail.com>"
+   ]
 }
