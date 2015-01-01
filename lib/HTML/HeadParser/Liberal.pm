@@ -5,7 +5,7 @@ use warnings;
 use HTML::HeadParser;
 use B::Deparse;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 BEGIN {
     my $code = "sub " . B::Deparse->new->coderef2text(\&HTML::HeadParser::start);

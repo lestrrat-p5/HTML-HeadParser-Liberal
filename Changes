@@ -1,6 +1,8 @@
 Revision history for Perl extension HTML-HeadParser-Liberal
 
 {{$NEXT}}
+
+0.02 2015-01-01T09:08:37Z
     - Update cpanfile (issue #1, PR #2, #3)
 
 0.01 2013-06-18T12:46:36Z

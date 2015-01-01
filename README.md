@@ -23,6 +23,12 @@ Currently this module supposrts the following:
 
         $h->header('X-Meta-Twitter-Card');
 
+    Note that YOU DO NOT NEED THIS HACK if you're using a recent enough LWP.
+    Because of this I was initially going to let this module die a slow death,
+    but then I have since been told that there are environments stuck with old
+    modules, so I guess there are some situations where this module is still
+    useful.
+
 # LICENSE
 
 Copyright (C) Daisuke Maki.
