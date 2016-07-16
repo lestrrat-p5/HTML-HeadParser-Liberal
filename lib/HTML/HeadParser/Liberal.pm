@@ -9,7 +9,7 @@ our $VERSION = "0.02";
 
 BEGIN {
     my $code = "sub " . B::Deparse->new->coderef2text(\&HTML::HeadParser::start);
-    $code =~ s/(if \(\$\$attr{'name'}\) {)/$1 \$attr->{name} =~ s\/:\/_\/g;/gsm;
+    $code =~ s/(if \(\$\$attr\{'name'}\) \{)/$1 \$attr->{name} =~ s\/:\/_\/g;/gsm;
 
     no warnings 'redefine';
     *HTML::HeadParser::start = eval $code;
