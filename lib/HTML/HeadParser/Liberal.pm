@@ -8,11 +8,38 @@ use B::Deparse;
 our $VERSION = "0.02";
 
 BEGIN {
-    my $code = "sub " . B::Deparse->new->coderef2text(\&HTML::HeadParser::start);
-    $code =~ s/(if \(\$\$attr\{'name'}\) \{)/$1 \$attr->{name} =~ s\/:\/_\/g;/gsm;
+    print STDERR $HTML::HeadParser::VERSION , "\n";
+    if ($HTML::HeadParser::VERSION < 3.71) {
+        my $code = "sub " . B::Deparse->new->coderef2text(\&HTML::HeadParser::start);
 
-    no warnings 'redefine';
-    *HTML::HeadParser::start = eval $code;
+        # Somewhere around perl 5.18 and perl 5.20, B::Deparse got upgraded,
+        # and the resulting code looks slightly different
+        #
+        # the older ones produce:
+        #    if ($$attr{'name'}) { ... }
+        # the newer ones produce:
+        #    if ($attr->{'name'}) { ... }
+
+        $code =~ s/
+            (
+                if
+                \s+
+                \(
+                (?:
+                    \$\$attr # old tyle
+                    |
+                    \$attr-> # new style
+                )
+                \{'name'}
+                \)
+                \s+
+                \{
+            )
+        /$1 \$attr->{'name'} =~ s\/:\/_\/g;/gsmx;
+
+        no warnings 'redefine';
+        *HTML::HeadParser::start = eval $code;
+    }
 }
 
 1;
