@@ -5,10 +5,9 @@ use warnings;
 use HTML::HeadParser;
 use B::Deparse;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 BEGIN {
-    print STDERR $HTML::HeadParser::VERSION , "\n";
     if ($HTML::HeadParser::VERSION < 3.71) {
         my $code = "sub " . B::Deparse->new->coderef2text(\&HTML::HeadParser::start);
 
