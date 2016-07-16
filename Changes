@@ -3,7 +3,7 @@ Revision history for Perl extension HTML-HeadParser-Liberal
 {{$NEXT}}
 
 0.03 2016-07-16T13:29:17Z
-    - Work with perl 5.24 regexp warnings
+    - Work with perl 5.24 regexp warnings (PR #4, by JohnBruce)
     - Fix regular expression to match newer B::Deparse
     - Only do the nasty blackmagic when we need to (HTML::HeadParser < 3.71)
 
