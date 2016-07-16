@@ -38,4 +38,4 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-Daisuke Maki <lestrrat>
+Daisuke Maki &lt;lestrrat>
